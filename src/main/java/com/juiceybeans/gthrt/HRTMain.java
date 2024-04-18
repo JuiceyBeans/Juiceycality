@@ -7,6 +7,7 @@ import com.gregtechceu.gtceu.api.data.chemical.material.event.PostMaterialEvent;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+import com.juiceybeans.gthrt.common.data.HRTMaterials;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -42,6 +43,10 @@ public class HRTMain {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
+    public static ResourceLocation id(String path) {
+        return new ResourceLocation(MOD_ID, path);
+    }
+
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             LOGGER.info("Hello from common setup! This is *after* registries are done, so we can do this:");
@@ -61,7 +66,7 @@ public class HRTMain {
 
     // As well as this.
     private void addMaterials(MaterialEvent event) {
-        //CustomMaterials.init();
+        HRTMaterials.init();
     }
 
     // This is optional, though.

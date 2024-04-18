@@ -2,6 +2,7 @@ package com.juiceybeans.gthrt;
 
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+import com.juiceybeans.gthrt.common.data.HRTRecipes;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -31,7 +32,7 @@ public class HRTAddon implements IGTAddon {
 
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
-        //CustomRecipes.init(provider);
+        HRTRecipes.init(provider);
     }
 
     // If you have custom ingredient types, uncomment this & change to match your capability.
