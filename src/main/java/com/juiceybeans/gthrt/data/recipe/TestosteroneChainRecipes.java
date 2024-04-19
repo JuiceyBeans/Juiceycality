@@ -6,7 +6,7 @@ import java.util.function.Consumer;
 
 public class TestosteroneChainRecipes {
     public static void init(Consumer<FinishedRecipe> provider) {
-        estrogenChainProcesses(provider);
+        testosteroneChainProcesses(provider);
     }
 
     private static void testosteroneChainProcesses(Consumer<FinishedRecipe> provider) {
