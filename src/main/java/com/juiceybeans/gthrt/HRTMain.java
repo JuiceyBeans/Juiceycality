@@ -8,6 +8,8 @@ import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.juiceybeans.gthrt.data.HRTMaterials;
+import com.juiceybeans.gthrt.data.lang.LangHandler;
+import com.tterrag.registrate.providers.ProviderType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -24,11 +26,12 @@ import org.apache.logging.log4j.Logger;
 public class HRTMain {
     public static final String MOD_ID = "gthrt";
     public static final Logger LOGGER = LogManager.getLogger();
-    public static GTRegistrate EXAMPLE_REGISTRATE = GTRegistrate.create(HRTMain.MOD_ID);
+    public static GTRegistrate HRT_REGISTRATE = GTRegistrate.create(HRTMain.MOD_ID);
 
     public HRTMain() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        HRTMain.HRT_REGISTRATE.addDataGenerator(ProviderType.LANG, LangHandler::init);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(this::addMaterialRegistries);

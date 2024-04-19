@@ -14,6 +14,14 @@ java {
     sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
 }
 
+def generatedResources = file("src/generated")
+
+sourceSets {
+    main {
+        resources.srcDir generatedResources
+    }
+}
+
 loom {
     // use this if you are using the official mojang mappings
     // and want loom to stop warning you about their license
@@ -37,6 +45,14 @@ loom {
         // also, any names used in your access transformer will need to be
         // in SRG mapped ("func_" / "field_" with MCP class names) to work!
         // (both of these things may be subject to change in the future)
+    }
+
+    runs {
+        data {
+            data()
+            programArgs "--all", "--mod", "gthrt"
+            programArgs "--output", generatedResources.absolutePath
+        }
     }
 }
 

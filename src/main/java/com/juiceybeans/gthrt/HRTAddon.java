@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 public class HRTAddon implements IGTAddon {
     @Override
     public GTRegistrate getRegistrate() {
-        return HRTMain.EXAMPLE_REGISTRATE;
+        return HRTMain.HRT_REGISTRATE;
     }
 
     @Override
