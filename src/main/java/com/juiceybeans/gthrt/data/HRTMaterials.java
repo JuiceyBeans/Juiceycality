@@ -1,16 +1,8 @@
-package com.juiceybeans.gthrt.common.data;
+package com.juiceybeans.gthrt.data;
 
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet;
-import com.gregtechceu.gtceu.api.data.chemical.material.Material;
-import com.gregtechceu.gtceu.api.data.chemical.material.properties.*;
-import com.gregtechceu.gtceu.api.fluids.FluidBuilder;
-import com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys;
 import com.juiceybeans.gthrt.HRTMain;
-
-import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.*;
-import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet.*;
-import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
 public class HRTMaterials {
     public static void init() {
