@@ -1,2 +1,1 @@
-# GregTech HRT
- 
+# Juiceycality (placeholder name)
