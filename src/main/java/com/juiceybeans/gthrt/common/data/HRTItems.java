@@ -17,6 +17,9 @@ public class HRTItems {
     public static ItemEntry<Item> HOT_IRON_INGOT = HRTMain.HRT_REGISTRATE.item("hot_iron_ingot", Item::new).tab(HRTTabs.HRT_MATERIALS.getKey()).register();
     public static ItemEntry<Item> ULTRASONIC_HOMOGENIZER = HRTMain.HRT_REGISTRATE.item("ultrasonic_homogenizer", Item::new).tab(HRTTabs.HRT_MATERIALS.getKey()).register();
     public static ItemEntry<Item> PIEZOELECTRIC_CRYSTAL = HRTMain.HRT_REGISTRATE.item("piezoelectric_crystal", Item::new).tab(HRTTabs.HRT_MATERIALS.getKey()).register();
+    public static ItemEntry<Item> CONTAMINATED_PETRI_DISH = HRTMain.HRT_REGISTRATE.item("contaminated_petri_dish", Item::new).tab(HRTTabs.HRT_MATERIALS.getKey()).register();
+    public static ItemEntry<Item> STERILIZED_PETRI_DISH = HRTMain.HRT_REGISTRATE.item("sterilized_petri_dish", Item::new).tab(HRTTabs.HRT_MATERIALS.getKey()).register();
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

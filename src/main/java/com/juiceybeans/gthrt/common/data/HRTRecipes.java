@@ -1,9 +1,6 @@
 package com.juiceybeans.gthrt.common.data;
 
-import com.juiceybeans.gthrt.data.recipe.EstrogenChainRecipes;
-import com.juiceybeans.gthrt.data.recipe.PolycaprolactamChainRecipes;
-import com.juiceybeans.gthrt.data.recipe.TestosteroneChainRecipes;
-import com.juiceybeans.gthrt.data.recipe.WetwareChainRecipes;
+import com.juiceybeans.gthrt.data.recipe.*;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
