@@ -12,7 +12,7 @@ public class HRTItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, HRTMain.MOD_ID);
 
     // Example Registrate item
-    // public static ItemEntry<Item> POWER_WASHER_2 = HRTMain.HRT_REGISTRATE.item("power_washer_2", Item::new).lang("Power Washer 2").register();
+    // public static ItemEntry<Item> POWER_WASHER_2 = HRTMain.HRT_REGISTRATE.item("power_washer", Item::new).lang("Power Washer").register();
 
     public static ItemEntry<Item> HOT_IRON_INGOT = HRTMain.HRT_REGISTRATE.item("hot_iron_ingot", Item::new).tab(HRTTabs.HRT_MATERIALS.getKey()).register();
     public static ItemEntry<Item> ULTRASONIC_HOMOGENIZER = HRTMain.HRT_REGISTRATE.item("ultrasonic_homogenizer", Item::new).tab(HRTTabs.HRT_MATERIALS.getKey()).register();
