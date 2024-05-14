@@ -121,7 +121,7 @@ public class HRTMaterials {
             .color(0x386939)
             .buildAndRegister()
             .setFormula("C142H230N36O44S");
-    public static final Material CleanAmmoniaSolution = new Material.Builder(HRTMain.id("clear_ammonia_solution"))
+    public static final Material CleanAmmoniaSolution = new Material.Builder(HRTMain.id("clean_ammonia_solution"))
             .fluid()
             .color(0x53c9a0)
             .buildAndRegister()
@@ -156,11 +156,6 @@ public class HRTMaterials {
             .color(0xb365e0)
             .buildAndRegister()
             .setFormula("C257H381N73O83S7");
-    public static final Material NitroBenzene = new Material.Builder(HRTMain.id("nitro_benzene"))
-            .fluid()
-            .color(0x81c951)
-            .buildAndRegister()
-            .setFormula("C6H5NO2");
     public static final Material Aniline = new Material.Builder(HRTMain.id("aniline"))
             .fluid()
             .color(0x4c911d)
@@ -278,6 +273,8 @@ public class HRTMaterials {
     //////////////////
     // Simple dusts //
     //////////////////
+
+    // Literally none of these register for some reason
     public static final Material CalciumHydroxide = new Material.Builder(HRTMain.id("calcium_hydroxide"))
             .dust()
             .color(0x5f8764).iconSet(MaterialIconSet.DULL)

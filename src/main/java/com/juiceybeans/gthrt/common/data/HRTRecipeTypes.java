@@ -18,9 +18,12 @@ public class HRTRecipeTypes {
             .setSound(new ExistingSoundEntry(SoundEvents.SAND_PLACE, SoundSource.BLOCKS))
             .setMaxTooltips(4);
 
+    /* Mixin into large mixer and let it have more inputs?
     public static final GTRecipeType LARGE_MIXER_RECIPES = GTRecipeTypes.register("large_mixer", GTRecipeTypes.ELECTRIC).setMaxIOSize(9, 1, 6, 1)
             .setSound(GTSoundEntries.MIXER)
             .setMaxTooltips(4);
+
+     */
 
     public static void init() {
     }

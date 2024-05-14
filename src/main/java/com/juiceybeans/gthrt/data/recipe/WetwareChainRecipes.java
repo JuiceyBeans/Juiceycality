@@ -41,7 +41,7 @@ public class WetwareChainRecipes {
         // GROWTH MEDIUM ===============================================================================================
 
         // 2CaO + 5C -> CO2 + 2CaCl2
-        BLAST_RECIPES.recipeBuilder(HRTMain.id("cacl2_from_cao"))
+        BLAST_RECIPES.recipeBuilder(HRTMain.id("calc_chloride_from_quicklime"))
                 .inputItems(dust, Quicklime, 4)
                 .inputItems(dust, Carbon, 5)
                 .outputFluids(CarbonMonoxide.getFluid(1000))
@@ -49,7 +49,7 @@ public class WetwareChainRecipes {
                 .blastFurnaceTemp(2500)
                 .EUt(120)
                 .duration(300)
-                .build();
+                .save(provider);
 
         // CaC2 + 2H2O -> Ca(OH)2 + C2H2
         BLAST_RECIPES.recipeBuilder(HRTMain.id("acetylene"))
@@ -60,17 +60,17 @@ public class WetwareChainRecipes {
                 .blastFurnaceTemp(2300)
                 .EUt(120)
                 .duration(200)
-                .build();
+                .save(provider);
 
         // Ca(OH)2 + 2HCl -> 2H2O + CaCl2
-        CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("cacl2_from_caoh2"))
+        CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("calc_chloride_from_hydrox"))
                 .inputItems(dust, CalciumHydroxide, 5)
                 .inputFluids(HydrochloricAcid.getFluid(2000))
                 .outputFluids(Water.getFluid(2000))
                 .outputItems(dust, CalciumChloride, 3)
                 .EUt(120)
                 .duration(60)
-                .build();
+                .save(provider);
 
         // O + CH3OH -> CH2O + H2O
         CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("formaldehyde_from_methanol"))
@@ -81,7 +81,7 @@ public class WetwareChainRecipes {
                 .outputFluids(Water.getFluid(1000))
                 .EUt(30720)
                 .duration(200)
-                .build();
+                .save(provider);
 
         // CH2O + C2H2 -> C3H4O
         CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("propargyl_alc_from_formaldehyde"))
@@ -91,7 +91,7 @@ public class WetwareChainRecipes {
                 .outputFluids(PropargylAlcohol.getFluid(1000))
                 .EUt(120)
                 .duration(120)
-                .build();
+                .save(provider);
 
         // C3H4O + HCl -> C3H3Cl + H2O
         CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("propargyl_chl_from_alc"))
@@ -101,14 +101,14 @@ public class WetwareChainRecipes {
                 .outputFluids(Water.getFluid(1000))
                 .EUt(120)
                 .duration(100)
-                .build();
+                .save(provider);
 
 //        EXTRACTOR_RECIPES.recipeBuilder(HRTMain.id("resin"))
 //                .inputItems(STICKY_RESIN)
 //                .outputFluids(Resin.getFluid(100))
 //                .EUt(24)
 //                .duration(100)
-//                .build();
+//                .save(provider);
 
         DISTILLATION_RECIPES.recipeBuilder(HRTMain.id("turpentine_from_resin"))
                 .chancedOutput(dust, RawRubber, 1, 5000, 0)
@@ -117,7 +117,7 @@ public class WetwareChainRecipes {
                 .outputFluids(Isoprene.getFluid(20))
                 .EUt(480)
                 .duration(500)
-                .build();
+                .save(provider);
 
         // C10H16 + H2SO4 -> C10H16 + H2SO4
         CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("betapinene_from_turpentine"))
@@ -127,17 +127,17 @@ public class WetwareChainRecipes {
                 .outputFluids(SulfuricAcid.getFluid(1000))
                 .EUt(480)
                 .duration(110)
-                .build();
+                .save(provider);
 
         // C10H16 + 2C5H8 + 2O -> 2C10H16O
-        CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("citral_from_b-pinene"))
+        CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("citral_from_b_pinene"))
                 .inputItems(dust, BetaPinene, 26)
                 .inputFluids(Isoprene.getFluid(2000))
                 .inputFluids(Oxygen.getFluid(2000))
                 .outputFluids(Citral.getFluid(2000))
                 .EUt(480)
                 .duration(100)
-                .build();
+                .save(provider);
 
         // C10H16O + C3H6O -> C13H20O + H2O
         CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("betaionone_from_citral"))
@@ -147,10 +147,10 @@ public class WetwareChainRecipes {
                 .outputFluids(Water.getFluid(1000))
                 .EUt(120)
                 .duration(250)
-                .build();
+                .save(provider);
 
         // 25C13H20O + 5C3H3Cl -> 17C20H30O + 8O + 5HCl
-        LARGE_CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("vit_a_from_b-ionone"))
+        LARGE_CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("vit_a_from_b_ionone"))
                 .inputFluids(BetaIonone.getFluid(25000))
                 .inputFluids(PropargylChloride.getFluid(5000))
                 .outputFluids(VitaminA.getFluid(17000))
@@ -158,14 +158,14 @@ public class WetwareChainRecipes {
                 .outputFluids(HydrochloricAcid.getFluid(5000))
                 .EUt(480)
                 .duration(150)
-                .build();
+                .save(provider);
 
         MACERATOR_RECIPES.recipeBuilder(HRTMain.id("yeast_from_apple"))
                 .inputItems(Items.APPLE)
                 .chancedOutput(dust, Yeast, 500, 500)
                 .EUt(30)
                 .duration(50)
-                .build();
+                .save(provider);
 
         BIO_REACTOR_RECIPES.recipeBuilder(HRTMain.id("linoleic_acid_from_yeast"))
                 .inputFluids(Biomass.getFluid(1000))
@@ -174,7 +174,7 @@ public class WetwareChainRecipes {
                 .outputFluids(LinoleicAcid.getFluid(1000))
                 .EUt(1920)
                 .duration(200)
-                .build();
+                .save(provider);
 
         // C2H4 + O -> C2H4O
         CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("ethylene_oxide_from_ethylene"))
@@ -184,7 +184,7 @@ public class WetwareChainRecipes {
                 .outputFluids(EthyleneOxide.getFluid(1000))
                 .EUt(480)
                 .duration(100)
-                .build();
+                .save(provider);
 
         // NH3 + C2H4O -> C2H7NO
         CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("ethanolamine_from_ammonia"))
@@ -193,7 +193,7 @@ public class WetwareChainRecipes {
                 .outputFluids(Ethanolamine.getFluid(1000))
                 .EUt(7680)
                 .duration(60)
-                .build();
+                .save(provider);
 
         BIO_REACTOR_RECIPES.recipeBuilder(HRTMain.id("biotin_from_cupravidus"))
                 .inputItems(dust, CupriavidusNecator)
@@ -203,7 +203,7 @@ public class WetwareChainRecipes {
                 .outputFluids(Biotin.getFluid(2000))
                 .EUt(7680)
                 .duration(40)
-                .build();
+                .save(provider);
 
         LARGE_CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("b27_from_biotin"))
                 .inputFluids(Biotin.getFluid(1000))
@@ -214,7 +214,7 @@ public class WetwareChainRecipes {
                 .outputFluids(B27Supplement.getFluid(5000))
                 .EUt(7680)
                 .duration(150)
-                .build();
+                .save(provider);
 
         MIXER_RECIPES.recipeBuilder(HRTMain.id("clean_ammonia_from_water"))
                 .inputFluids(Ammonia.getFluid(1000))
@@ -222,7 +222,7 @@ public class WetwareChainRecipes {
                 .outputFluids(CleanAmmoniaSolution.getFluid(2000))
                 .EUt(480)
                 .duration(100)
-                .build();
+                .save(provider);
 
         BIO_REACTOR_RECIPES.recipeBuilder(HRTMain.id("glutamine_from_ammonia"))
                 .inputFluids(CleanAmmoniaSolution.getFluid(1000))
@@ -231,14 +231,14 @@ public class WetwareChainRecipes {
                 .outputItems(dust, Glutamine, 40)
                 .EUt(30720)
                 .duration(500)
-                .build();
+                .save(provider);
 
         CENTRIFUGE_RECIPES.recipeBuilder(HRTMain.id("blood_from_meat"))
                 .inputItems(dust, Meat)
                 .outputFluids(Blood.getFluid(1000))
                 .EUt(30)
                 .duration(50)
-                .build();
+                .save(provider);
 
         CENTRIFUGE_RECIPES.recipeBuilder(HRTMain.id("blood_centrifuge"))
                 .inputFluids(Blood.getFluid(1000))
@@ -246,7 +246,7 @@ public class WetwareChainRecipes {
                 .outputFluids(BloodPlasma.getFluid(500))
                 .EUt(480)
                 .duration(200)
-                .build();
+                .save(provider);
 
         CENTRIFUGE_RECIPES.recipeBuilder(HRTMain.id("blood_plasma_centrifuge"))
                 .inputFluids(BloodPlasma.getFluid(1000))
@@ -255,18 +255,18 @@ public class WetwareChainRecipes {
                 .outputFluids(EGF.getFluid(200))
                 .EUt(480)
                 .duration(50)
-                .build();
+                .save(provider);
 
-        LARGE_MIXER_RECIPES.recipeBuilder(HRTMain.id("raw_medium_from_b27"))
-                .inputFluids(B27Supplement.getFluid(1000))
-                .inputFluids(AmmoniumNitrate.getFluid(1000))
-                .inputItems(dust, Glutamine, 20)
-                .inputFluids(BFGF.getFluid(1000))
-                .inputFluids(EGF.getFluid(1000))
-                .outputFluids(RawGrowthMedium.getFluid(4000))
-                .EUt(480)
-                .duration(500)
-                .build();
+//        MIXER_RECIPES.recipeBuilder(HRTMain.id("raw_medium_from_b27"))
+//                .inputFluids(B27Supplement.getFluid(1000))
+//                .inputFluids(AmmoniumNitrate.getFluid(1000))
+//                .inputFluids(BFGF.getFluid(1000))
+//                .inputFluids(EGF.getFluid(1000))
+//                .inputItems(dust, Glutamine, 20)
+//                .outputFluids(RawGrowthMedium.getFluid(4000))
+//                .EUt(480)
+//                .duration(500)
+//                .save(provider);
 
         MIXER_RECIPES.recipeBuilder(HRTMain.id("growth_med_from_cells"))
                 .inputFluids(BloodCells.getFluid(1000))
@@ -275,7 +275,7 @@ public class WetwareChainRecipes {
                 .outputFluids(BacterialGrowthMedium.getFluid(2000))
                 .EUt(120)
                 .duration(100)
-                .build();
+                .save(provider);
 
         /////////////////////////////
         // Sterlized Growth Medium //
@@ -289,7 +289,7 @@ public class WetwareChainRecipes {
                 .outputFluids(SilicaGelBase.getFluid(1000))
                 .EUt(120)
                 .duration(120)
-                .build();
+                .save(provider);
 
         CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder(HRTMain.id("silica_gel_from_base"))
                 .inputFluids(SilicaGelBase.getFluid(1000))
@@ -297,7 +297,7 @@ public class WetwareChainRecipes {
                 .outputItems(dust, Salt, 2)
                 .EUt(480)
                 .duration(125)
-                .build();
+                .save(provider);
 
         MIXER_RECIPES.recipeBuilder(HRTMain.id("silica_alumina_from_alumina"))
                 .inputItems(dust, SilicaGel, 3)
@@ -305,7 +305,7 @@ public class WetwareChainRecipes {
                 .outputItems(dust, SilicaAluminaGel, 8)
                 .EUt(30)
                 .duration(60)
-                .build();
+                .save(provider);
 
         BLAST_RECIPES.recipeBuilder(HRTMain.id("zeolite_pellets_from_silica_alumina"))
                 .inputItems(dust, SilicaAluminaGel)
@@ -313,14 +313,14 @@ public class WetwareChainRecipes {
                 .blastFurnaceTemp(4500)
                 .EUt(120)
                 .duration(400)
-                .build();
+                .save(provider);
 
         CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder(HRTMain.id("dehydrate_zeolite_pellets"))
                 .inputItems(dust, WetZeoliteSievingPellets)
                 .outputItems(dust, ZeoliteSievingPellets)
                 .EUt(120)
                 .duration(50)
-                .build();
+                .save(provider);
 
         MIXER_RECIPES.recipeBuilder(HRTMain.id("ethanol_from_zeolite"))
                 .inputItems(dust, ZeoliteSievingPellets)
@@ -329,7 +329,7 @@ public class WetwareChainRecipes {
                 .outputItems(dust, WetZeoliteSievingPellets)
                 .EUt(120)
                 .duration(100)
-                .build();
+                .save(provider);
 
         AUTOCLAVE_RECIPES.recipeBuilder(HRTMain.id("sterilized_dish"))
                 .inputItems(PETRI_DISH)
@@ -337,7 +337,7 @@ public class WetwareChainRecipes {
                 .outputItems(STERILIZED_PETRI_DISH)
                 .EUt(7680)
                 .duration(25)
-                .build();
+                .save(provider);
 
         MIXER_RECIPES.recipeBuilder(HRTMain.id("piranha_from_sulfuric"))
                 .inputFluids(HydrogenPeroxide.getFluid(1000))
@@ -345,7 +345,7 @@ public class WetwareChainRecipes {
                 .outputFluids(PiranhaSolution.getFluid(2000))
                 .EUt(30)
                 .duration(50)
-                .build();
+                .save(provider);
 
         CHEMICAL_BATH_RECIPES.recipeBuilder(HRTMain.id("dish_cleaning"))
                 .inputFluids(PiranhaSolution.getFluid(100))
@@ -353,28 +353,28 @@ public class WetwareChainRecipes {
                 .outputItems(PETRI_DISH)
                 .EUt(30)
                 .duration(25)
-                .build();
+                .save(provider);
 
         // [H2SO4 + HNO3] + C6H6 -> C6H5NO2 + H2O + H2SO4
         CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("nitrobenzene_from_benzene"))
                 .inputFluids(NitrationMixture.getFluid(2000))
                 .inputFluids(Benzene.getFluid(1000))
-                .outputFluids(NitroBenzene.getFluid(1000))
+                .outputFluids(Nitrobenzene.getFluid(1000))
                 .outputFluids(DilutedSulfuricAcid.getFluid(2000))
                 .EUt(30)
                 .duration(100)
-                .build();
+                .save(provider);
 
         // 6H + C6H5NO2 -> C6H5NH2 + 2H2O
         CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("aniline_from_nitrobenzene"))
                 .inputFluids(Hydrogen.getFluid(6000))
-                .inputFluids(NitroBenzene.getFluid(1000))
+                .inputFluids(Nitrobenzene.getFluid(1000))
                 .notConsumable(dust, Zinc)
                 .outputFluids(Aniline.getFluid(1000))
                 .outputFluids(Water.getFluid(2000))
                 .EUt(30)
                 .duration(100)
-                .build();
+                .save(provider);
 
         // HCl + 2H2SO4 + O -> HSO3Cl + 2H2O + SO3
         LARGE_CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("chlorosulfonic_from_sulfuric"))
@@ -386,7 +386,7 @@ public class WetwareChainRecipes {
                 .outputFluids(SulfurTrioxide.getFluid(1000))
                 .EUt(480)
                 .duration(200)
-                .build();
+                .save(provider);
 
         // C6H5NH2 + (CH3CO)2O + HSO3Cl -> C8H8ClNO3S + H2O + CH3COOH
         LARGE_CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("acetylsulfanilyl_from_aniline"))
@@ -398,7 +398,7 @@ public class WetwareChainRecipes {
                 .outputFluids(AceticAcid.getFluid(1000))
                 .EUt(1920)
                 .duration(100)
-                .build();
+                .save(provider);
 
         // H2O + Na2CO3 -> NaHCO3 + NaOH
         LARGE_CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("sodium_bicar_from_soda_ash")).duration(140).EUt(30)
@@ -406,14 +406,14 @@ public class WetwareChainRecipes {
                 .inputItems(dust, SodaAsh, 6)
                 .outputItems(dust, SodiumBicarbonate, 6)
                 .outputItems(dust, SodiumHydroxide, 3)
-                .build();
+                .save(provider);
 
         // NaHCO3 -> NaOH + CO2
         ELECTROLYZER_RECIPES.recipeBuilder(HRTMain.id("sodium_hydrox_from_bicarbonate")).duration(145).EUt(120)
                 .inputItems(dust, SodiumBicarbonate, 6)
                 .outputItems(dust, SodiumHydroxide, 3)
                 .outputFluids(CarbonDioxide.getFluid(1000))
-                .build();
+                .save(provider);
 
         // NaHCO3 + C8H8ClNO3S + NH3 -> NaCl + C6H8N2O2S + CO2 + CH3COOH
         LARGE_CHEMICAL_RECIPES.recipeBuilder(HRTMain.id("sulfanilamide_from_na_bicar"))
@@ -426,7 +426,7 @@ public class WetwareChainRecipes {
                 .outputFluids(AceticAcid.getFluid(1000))
                 .EUt(30720)
                 .duration(50)
-                .build();
+                .save(provider);
 
         MIXER_RECIPES.recipeBuilder(HRTMain.id("sterile_medium_from_sulfanilamide"))
                 .inputFluids(RawGrowthMedium.getFluid(1000))
@@ -434,7 +434,7 @@ public class WetwareChainRecipes {
                 .outputFluids(SterileGrowthMedium.getFluid(1250))
                 .EUt(7680)
                 .duration(100)
-                .build();
+                .save(provider);
 
 
 
