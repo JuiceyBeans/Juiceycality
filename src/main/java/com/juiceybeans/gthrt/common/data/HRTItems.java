@@ -1,7 +1,6 @@
 package com.juiceybeans.gthrt.common.data;
 
 import com.tterrag.registrate.util.entry.ItemEntry;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 
 import static com.juiceybeans.gthrt.HRTMain.HRT_REGISTRATE;

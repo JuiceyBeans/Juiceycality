@@ -4,8 +4,10 @@ import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet;
 import com.juiceybeans.gthrt.HRTMain;
 
-import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.*;
-import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
+import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
+import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.GENERATE_PLATE;
+import static com.gregtechceu.gtceu.common.data.GTMaterials.Ammonia;
+import static com.gregtechceu.gtceu.common.data.GTMaterials.Ethanol;
 
 public class HRTMaterials {
 

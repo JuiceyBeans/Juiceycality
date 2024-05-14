@@ -1,8 +1,8 @@
 package com.juiceybeans.gthrt.data.recipe;
 
-import java.util.function.Consumer;
-
 import net.minecraft.data.recipes.FinishedRecipe;
+
+import java.util.function.Consumer;
 
 public class EstrogenChainRecipes {
     public static void init(Consumer<FinishedRecipe> provider) {

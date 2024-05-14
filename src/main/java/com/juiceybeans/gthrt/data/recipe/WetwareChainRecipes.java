@@ -9,12 +9,14 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.function.Consumer;
 
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
-import static com.gregtechceu.gtceu.common.data.GTItems.*;
+import static com.gregtechceu.gtceu.common.data.GTItems.PETRI_DISH;
+import static com.gregtechceu.gtceu.common.data.GTItems.STEM_CELLS;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
 import static com.juiceybeans.gthrt.common.data.HRTItems.*;
 import static com.juiceybeans.gthrt.common.data.HRTMaterials.*;
-import static com.juiceybeans.gthrt.common.data.HRTRecipeTypes.*;
+import static com.juiceybeans.gthrt.common.data.HRTRecipeTypes.BIO_REACTOR_RECIPES;
+import static com.juiceybeans.gthrt.common.data.HRTRecipeTypes.CHEMICAL_DEHYDRATOR_RECIPES;
 
 public class WetwareChainRecipes {
     public static void init(Consumer<FinishedRecipe> provider) {
