@@ -274,7 +274,7 @@ public class HRTMaterials {
     // Simple dusts //
     //////////////////
 
-    // Literally none of these register for some reason
+    // Literally none of these show up in JEI
     public static final Material CalciumHydroxide = new Material.Builder(HRTMain.id("calcium_hydroxide"))
             .dust()
             .color(0x5f8764).iconSet(MaterialIconSet.DULL)
