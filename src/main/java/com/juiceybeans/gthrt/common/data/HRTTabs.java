@@ -14,4 +14,12 @@ public class HRTTabs {
                             .title(HRT_REGISTRATE.addLang("itemGroup", HRTMain.id("juiceycality_items"),  "Juiceycality Materials"))
                             .build())
             .register();
+
+    static {
+        HRT_REGISTRATE.creativeModeTab(() -> HRTTabs.HRT_MATERIALS);
+    }
+
+    public static void init() {
+
+    }
 }
