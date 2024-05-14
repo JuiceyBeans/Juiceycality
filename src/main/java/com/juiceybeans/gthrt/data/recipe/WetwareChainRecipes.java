@@ -22,9 +22,9 @@ public class WetwareChainRecipes {
     }
     private static void wetwareChainRecipes(Consumer<FinishedRecipe> provider) {
         ASSEMBLER_RECIPES.recipeBuilder(HRTMain.id("ultrasonic_homogenizer"))
-                .inputItems(PIEZOELECTRIC_CRYSTAL.asStack())
+                .inputItems(PiezoelectricCrystal.asStack())
                 .inputItems(rodLong, RhodiumPlatedPalladium)
-                .outputItems(ULTRASONIC_HOMOGENIZER.asStack())
+                .outputItems(UltrasonicHomogenizer.asStack())
                 .EUt(30720)
                 .duration(500)
                 .save(provider);
@@ -33,7 +33,7 @@ public class WetwareChainRecipes {
                 .inputItems(gemExquisite, LeadZirconateTitanate, 2)
                 .inputItems(wireFine, Gold)
                 .inputFluids(SolderingAlloy.getFluid(288))
-                .outputItems(PIEZOELECTRIC_CRYSTAL.asStack())
+                .outputItems(PiezoelectricCrystal.asStack())
                 .EUt(30720)
                 .duration(430)
                 .save(provider);
@@ -170,7 +170,7 @@ public class WetwareChainRecipes {
         BIO_REACTOR_RECIPES.recipeBuilder(HRTMain.id("linoleic_acid_from_yeast"))
                 .inputFluids(Biomass.getFluid(1000))
                 .inputItems(dust, Yeast)
-                .notConsumable(ULTRASONIC_HOMOGENIZER)
+                .notConsumable(UltrasonicHomogenizer)
                 .outputFluids(LinoleicAcid.getFluid(1000))
                 .EUt(1920)
                 .duration(200)
@@ -270,7 +270,7 @@ public class WetwareChainRecipes {
 
         MIXER_RECIPES.recipeBuilder(HRTMain.id("growth_med_from_cells"))
                 .inputFluids(BloodCells.getFluid(1000))
-                .notConsumable(ULTRASONIC_HOMOGENIZER)
+                .notConsumable(UltrasonicHomogenizer)
                 .inputFluids(DistilledWater.getFluid(1000))
                 .outputFluids(BacterialGrowthMedium.getFluid(2000))
                 .EUt(120)
@@ -334,7 +334,7 @@ public class WetwareChainRecipes {
         AUTOCLAVE_RECIPES.recipeBuilder(HRTMain.id("sterilized_dish"))
                 .inputItems(PETRI_DISH)
                 .inputFluids(Ethanol_100.getFluid(100))
-                .outputItems(STERILIZED_PETRI_DISH)
+                .outputItems(SterilizedPetriDish)
                 .EUt(7680)
                 .duration(25)
                 .save(provider);
@@ -349,7 +349,7 @@ public class WetwareChainRecipes {
 
         CHEMICAL_BATH_RECIPES.recipeBuilder(HRTMain.id("dish_cleaning"))
                 .inputFluids(PiranhaSolution.getFluid(100))
-                .inputItems(CONTAMINATED_PETRI_DISH)
+                .inputItems(ContaminatedPetriDish)
                 .outputItems(PETRI_DISH)
                 .EUt(30)
                 .duration(25)
@@ -516,7 +516,7 @@ public class WetwareChainRecipes {
                 .save(provider);
 
         BIO_REACTOR_RECIPES.recipeBuilder(HRTMain.id(("cas9")))
-                .notConsumable(ULTRASONIC_HOMOGENIZER.asStack())
+                .notConsumable(UltrasonicHomogenizer.asStack())
                 .inputItems(dust, StreptococcusPyogenes)
                 .inputFluids(DistilledWater.getFluid(1000))
                 .outputFluids(Cas_9.getFluid(1000))
@@ -537,7 +537,7 @@ public class WetwareChainRecipes {
                 .save(provider);
 
         MIXER_RECIPES.recipeBuilder(HRTMain.id(("chitin_from_red_shroom")))
-                .notConsumable(ULTRASONIC_HOMOGENIZER.asStack())
+                .notConsumable(UltrasonicHomogenizer.asStack())
                 .inputItems(new ItemStack(Blocks.RED_MUSHROOM, 1))
                 .outputFluids(Chitin.getFluid(100))
                 .EUt(30)
@@ -545,7 +545,7 @@ public class WetwareChainRecipes {
                 .save(provider);
 
         MIXER_RECIPES.recipeBuilder(HRTMain.id(("chitin_from_brown_shroom")))
-                .notConsumable(ULTRASONIC_HOMOGENIZER.asStack())
+                .notConsumable(UltrasonicHomogenizer.asStack())
                 .inputItems(new ItemStack(Blocks.BROWN_MUSHROOM, 1))
                 .outputFluids(Chitin.getFluid(100))
                 .EUt(30)

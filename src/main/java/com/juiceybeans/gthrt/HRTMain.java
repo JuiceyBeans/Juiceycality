@@ -8,6 +8,7 @@ import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.juiceybeans.gthrt.common.data.*;
+import com.juiceybeans.gthrt.data.HRTBlocks;
 import com.juiceybeans.gthrt.data.lang.LangHandler;
 import com.tterrag.registrate.providers.ProviderType;
 import net.minecraft.resources.ResourceLocation;
@@ -31,7 +32,8 @@ public class HRTMain {
 
         HRTMain.HRT_REGISTRATE.addDataGenerator(ProviderType.LANG, LangHandler::init);
 
-        HRTItems.register(modEventBus);
+        HRTItems.init();
+        HRTBlocks.init();
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
