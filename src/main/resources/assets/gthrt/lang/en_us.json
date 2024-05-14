@@ -13,6 +13,9 @@
   "block.gtceu.hv_bio_reactor": "§6Small Bio Reactor I",
   "block.gtceu.ev_bio_reactor": "§5Small Bio Reactor II",
   "block.gtceu.iv_bio_reactor": "§9Small Bio Reactor III",
+  "block.gtceu.tempered_glass": "Borosilicate Tempered Glass",
+  "block.gthrt.nickel_tempered_glass": "Nickel Tempered Glass",
+  "block.gthrt.chrome_tempered_glass": "Chrome Tempered Glass",
 
   "material.gthrt.estradiol": "Estradiol",
   "material.gthrt.testosterone": "Testosterone",

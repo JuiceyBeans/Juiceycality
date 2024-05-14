@@ -10,7 +10,6 @@ import com.gregtechceu.gtceu.api.machine.SimpleTieredMachine;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.recipe.OverclockingLogic;
 import com.gregtechceu.gtceu.api.registry.registrate.MachineBuilder;
-import com.gregtechceu.gtceu.common.data.GTMachines;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import it.unimi.dsi.fastutil.ints.Int2LongFunction;
 
@@ -25,7 +24,6 @@ import static com.gregtechceu.gtceu.utils.FormattingUtil.toEnglishName;
 public class HRTMachines {
 
     // Machine Definitions
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static final MachineDefinition[] BIO_REACTOR = HRTMachines.registerTieredMachines("bio_reactor", (holder, tier) -> new SimpleTieredMachine(holder, tier, defaultTankSizeFunction), (tier, builder) -> builder
             .langValue("%s Small Bio Reactor %s".formatted(VLVH[tier], VLVT[tier]))
             .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(GTCEu.id("bio_reactor"), HRTRecipeTypes.BIO_REACTOR_RECIPES))
@@ -43,7 +41,6 @@ public class HRTMachines {
 
     // Builder functions
     // Note: Machines need to be registered to your namespace instead of GTMachines
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static MachineDefinition[] registerSimpleMachines(String name,
                                                              GTRecipeType recipeType,
                                                              Int2LongFunction tankScalingFunction,
