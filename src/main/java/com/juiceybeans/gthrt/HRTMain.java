@@ -7,12 +7,13 @@ import com.gregtechceu.gtceu.api.data.chemical.material.event.PostMaterialEvent;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
-import com.juiceybeans.gthrt.data.HRTMaterials;
+import com.juiceybeans.gthrt.common.data.HRTRecipeTypes;
 import com.juiceybeans.gthrt.data.lang.LangHandler;
+import com.juiceybeans.gthrt.common.data.HRTMaterials;
+import com.juiceybeans.gthrt.common.data.HRTItems;
+import com.juiceybeans.gthrt.common.data.HRTMachines;
 import com.tterrag.registrate.providers.ProviderType;
-import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -32,6 +33,9 @@ public class HRTMain {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         HRTMain.HRT_REGISTRATE.addDataGenerator(ProviderType.LANG, LangHandler::init);
+
+        HRTItems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(this::addMaterialRegistries);
@@ -52,13 +56,11 @@ public class HRTMain {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            LOGGER.info("Hello from common setup! This is *after* registries are done, so we can do this:");
-            LOGGER.info("Look, I found a {}!", Items.DIAMOND);
         });
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-        LOGGER.info("Hey, we're on Minecraft version {}!", Minecraft.getInstance().getLaunchedVersion());
+
     }
 
     // You MUST have this for custom materials.
@@ -78,10 +80,10 @@ public class HRTMain {
     }
 
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
-        //CustomRecipeTypes.init();
+        HRTRecipeTypes.init();
     }
 
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
-        //CustomMachines.init();
+        HRTMachines.init();
     }
 }

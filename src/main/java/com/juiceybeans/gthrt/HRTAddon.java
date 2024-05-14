@@ -2,7 +2,7 @@ package com.juiceybeans.gthrt;
 
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
-import com.juiceybeans.gthrt.data.HRTRecipes;
+import com.juiceybeans.gthrt.common.data.HRTRecipes;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
