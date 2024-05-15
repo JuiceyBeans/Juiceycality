@@ -1,13 +1,11 @@
 package com.juiceybeans.gthrt.common.data;
 
 import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.block.RendererBlock;
 import com.gregtechceu.gtceu.api.block.RendererGlassBlock;
 import com.gregtechceu.gtceu.api.data.tag.TagUtil;
 import com.gregtechceu.gtceu.api.item.RendererBlockItem;
-import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 import com.gregtechceu.gtceu.client.renderer.block.TextureOverrideRenderer;
 import com.juiceybeans.gthrt.HRTMain;
 import com.lowdragmc.lowdraglib.Platform;
@@ -28,7 +26,6 @@ import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
 import static com.gregtechceu.gtceu.api.GTValues.UV;
-import static com.gregtechceu.gtceu.common.registry.GTRegistration.REGISTRATE;
 import static com.juiceybeans.gthrt.HRTMain.HRT_REGISTRATE;
 
 public class HRTBlocks {

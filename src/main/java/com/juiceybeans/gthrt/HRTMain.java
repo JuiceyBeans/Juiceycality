@@ -7,11 +7,7 @@ import com.gregtechceu.gtceu.api.data.chemical.material.event.PostMaterialEvent;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
-import com.juiceybeans.gthrt.common.data.HRTItems;
-import com.juiceybeans.gthrt.common.data.HRTMachines;
-import com.juiceybeans.gthrt.common.data.HRTMaterials;
-import com.juiceybeans.gthrt.common.data.HRTRecipeTypes;
-import com.juiceybeans.gthrt.data.HRTBlocks;
+import com.juiceybeans.gthrt.common.data.*;
 import com.juiceybeans.gthrt.data.lang.LangHandler;
 import com.tterrag.registrate.providers.ProviderType;
 import net.minecraft.resources.ResourceLocation;
@@ -62,7 +58,8 @@ public class HRTMain {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-
+        //finds RGB for a material
+        //LOGGER.info("[Juiceycality] NaquadahAlloy RGB: " + Integer.toHexString(GTMaterials.NaquadahAlloy.getMaterialRGB()));
     }
 
     // You MUST have this for custom materials.
