@@ -11,10 +11,10 @@ import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.CHEMICAL_RECIPES;
 
 public class PolycaprolactamChainRecipes {
     public static void init(Consumer<FinishedRecipe> provider) {
-        polycaprolactamChainProcesses(provider);
+        polycaprolactamChainRecipes(provider);
     }
 
-    private static void polycaprolactamChainProcesses(Consumer<FinishedRecipe> provider) {
+    private static void polycaprolactamChainRecipes(Consumer<FinishedRecipe> provider) {
         CHEMICAL_RECIPES.recipeBuilder(HRTMain.id(("polycaprolactam_from_naphta")))
                 .inputItems(dust, GTMaterials.Saltpeter)
                 .inputFluids(GTMaterials.Naphtha.getFluid(576))

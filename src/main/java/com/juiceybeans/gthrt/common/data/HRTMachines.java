@@ -35,9 +35,8 @@ public class HRTMachines {
             .compassNode("bio_reactor")
             .register(), GTValues.tiersBetween(HV, IV));
     public static final MachineDefinition[] CHEMICAL_DEHYDRATOR = HRTMachines.registerSimpleMachines("chemical_dehydrator", HRTRecipeTypes.CHEMICAL_DEHYDRATOR_RECIPES);
-    public static void init() {
 
-    }
+    public static void init() {}
 
     // Builder functions
     // Note: Machines need to be registered to your namespace instead of GTMachines

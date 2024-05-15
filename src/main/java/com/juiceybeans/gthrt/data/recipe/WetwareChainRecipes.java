@@ -15,8 +15,7 @@ import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
 import static com.juiceybeans.gthrt.common.data.HRTItems.*;
 import static com.juiceybeans.gthrt.common.data.HRTMaterials.*;
-import static com.juiceybeans.gthrt.common.data.HRTRecipeTypes.BIO_REACTOR_RECIPES;
-import static com.juiceybeans.gthrt.common.data.HRTRecipeTypes.CHEMICAL_DEHYDRATOR_RECIPES;
+import static com.juiceybeans.gthrt.common.data.HRTRecipeTypes.*;
 
 public class WetwareChainRecipes {
     public static void init(Consumer<FinishedRecipe> provider) {
@@ -259,16 +258,16 @@ public class WetwareChainRecipes {
                 .duration(50)
                 .save(provider);
 
-//        MIXER_RECIPES.recipeBuilder(HRTMain.id("raw_medium_from_b27"))
-//                .inputFluids(B27Supplement.getFluid(1000))
-//                .inputFluids(AmmoniumNitrate.getFluid(1000))
-//                .inputFluids(BFGF.getFluid(1000))
-//                .inputFluids(EGF.getFluid(1000))
-//                .inputItems(dust, Glutamine, 20)
-//                .outputFluids(RawGrowthMedium.getFluid(4000))
-//                .EUt(480)
-//                .duration(500)
-//                .save(provider);
+        LARGE_MIXER_RECIPES.recipeBuilder(HRTMain.id("raw_medium_from_b27"))
+                .inputFluids(B27Supplement.getFluid(1000))
+                .inputFluids(AmmoniumNitrate.getFluid(1000))
+                .inputFluids(BFGF.getFluid(1000))
+                .inputFluids(EGF.getFluid(1000))
+                .inputItems(dust, Glutamine, 20)
+                .outputFluids(RawGrowthMedium.getFluid(4000))
+                .EUt(480)
+                .duration(500)
+                .save(provider);
 
         MIXER_RECIPES.recipeBuilder(HRTMain.id("growth_med_from_cells"))
                 .inputFluids(BloodCells.getFluid(1000))

@@ -6,8 +6,7 @@ import com.juiceybeans.gthrt.HRTMain;
 
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.GENERATE_PLATE;
-import static com.gregtechceu.gtceu.common.data.GTMaterials.Ammonia;
-import static com.gregtechceu.gtceu.common.data.GTMaterials.Ethanol;
+import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
 public class HRTMaterials {
 
@@ -258,6 +257,31 @@ public class HRTMaterials {
             .color(0x5f6e46)
             .buildAndRegister()
             .setFormula("?");
+    public static final Material RichNitrogenMix = new Material.Builder(HRTMain.id("rich_nitrogen_mix"))
+            .fluid()
+            .color(0x6891d8)
+            .buildAndRegister()
+            .setFormula("H2O(CH4)?");
+    public static final Material OxidisedNitrogenMix = new Material.Builder(HRTMain.id("oxidised_nitrogen_mix"))
+            .fluid()
+            .color(0x708ACD)
+            .buildAndRegister()
+            .setFormula("(H2O)2(CH4)??");
+    public static final Material PurifiedNitrogenMix = new Material.Builder(HRTMain.id("purified_nitrogen_mix"))
+            .fluid()
+            .color(0x6891d8)
+            .buildAndRegister()
+            .setFormula("(H2O)2(CH4)?");
+        public static final Material CarbonatedEthanolamine = new Material.Builder(HRTMain.id("carbonated_ethanolamine"))
+            .fluid()
+            .color(0x6f7d87)
+            .buildAndRegister()
+            .setFormula("H2NCH2CH2OHC");
+    public static final Material AmmoniaRichMix = new Material.Builder(HRTMain.id("ammonia_rich_mix"))
+            .fluid()
+            .color(0x2f5d99)
+            .buildAndRegister()
+            .setFormula("NH3((H2O)2(CH4)?");
     public static final Material AceticAnhydride = new Material.Builder(HRTMain.id("acetic_anhydride"))
             .fluid()
             .color(0xD5DDDF)
@@ -268,6 +292,11 @@ public class HRTMaterials {
             .color((Aniline.getMaterialRGB() + AceticAnhydride.getMaterialRGB() + ChlorosulfonicAcid.getMaterialRGB())/3)
             .buildAndRegister()
             .setFormula("(CH3CO)2O");
+    public static final Material ChloroauricAcid = new Material.Builder(HRTMain.id("chloroauric_acid"))
+            .fluid()
+            .color(0xDFD11F)
+            .buildAndRegister()
+            .setFormula("HAuCl?");
 
 
 
@@ -275,8 +304,6 @@ public class HRTMaterials {
     //////////////////
     // Simple dusts //
     //////////////////
-
-    // Literally none of these show up in JEI
     public static final Material CalciumHydroxide = new Material.Builder(HRTMain.id("calcium_hydroxide"))
             .dust()
             .color(0x5f8764).iconSet(MaterialIconSet.DULL)
@@ -347,20 +374,63 @@ public class HRTMaterials {
             .color(0x377528).iconSet(MaterialIconSet.ROUGH)
             .buildAndRegister()
             .setFormula("Bacteria");
+    public static final Material NiAlOCatalyst = new Material.Builder(HRTMain.id("nialo_catalyst"))
+            .dust()
+            .color(0x0af0af).iconSet(MaterialIconSet.SHINY)
+            .buildAndRegister()
+            .setFormula("NiAl2O4");
+    public static final Material FeCrOCatalyst = new Material.Builder(HRTMain.id("fecro_catalyst"))
+            .dust()
+            .color(0x8C4517).iconSet(MaterialIconSet.SHINY)
+            .buildAndRegister()
+            .setFormula("FeCrO3");
+    public static final Material CopperLeach = new Material.Builder(HRTMain.id("copper_leach"))
+            .dust()
+            .color(0x765A30).iconSet(MaterialIconSet.SHINY)
+            .buildAndRegister()
+            .setFormula("Cu3?");
+    public static final Material GoldLeach = new Material.Builder(HRTMain.id("gold_leach"))
+            .dust()
+            .color(0xBBA52B).iconSet(MaterialIconSet.ROUGH)
+            .buildAndRegister()
+            .setFormula("Cu3Au?");
+    public static final Material PotassiumMetabisulfite = new Material.Builder(HRTMain.id("potassium_metabisulfite"))
+            .dust()
+            .color(0xFFFFFF).iconSet(MaterialIconSet.DULL)
+            .buildAndRegister()
+            .setFormula("K2S2O5");
 
 
 
 
 
-    ////////////////
-    // Other misc //
-    ////////////////
+    ///////////////////
+    // Gem materials //
+    ///////////////////
     public static final Material LeadZirconateTitanate = new Material.Builder(HRTMain.id("lead_zirconate_titanate"))
             .gem()
             .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION)
             .color(0x359ade).iconSet(MaterialIconSet.OPAL)
             .buildAndRegister()
-            .setFormula("PbZrTiO3", true);
+            .setFormula("PbZrTiO3");
 
 
+
+
+
+    /////////////////////
+    // Ingot materials //
+    /////////////////////
+    public static final Material GoldAlloy = new Material.Builder(HRTMain.id("gold_alloy"))
+            .ingot().ore()
+            .flags(DISABLE_DECOMPOSITION)
+            .color(0xBBA52B).iconSet(MaterialIconSet.SHINY)
+            .buildAndRegister()
+            .setFormula("Cu3Au?");
+    public static final Material PreciousMetal = new Material.Builder(HRTMain.id("precious_metal"))
+            .ingot().ore()
+            .flags(DISABLE_DECOMPOSITION)
+            .color((Ruthenium.getMaterialRGB() + Rhodium.getMaterialRGB() + Palladium.getMaterialRGB() + Silver.getMaterialRGB() + Rhenium.getMaterialRGB() + Osmium.getMaterialRGB() + Iridium.getMaterialRGB() + Platinum.getMaterialRGB() + Gold.getMaterialRGB())/9).iconSet(MaterialIconSet.SHINY)
+            .buildAndRegister()
+            .setFormula("RuRhPdAgReOsIrPtAu");
 }

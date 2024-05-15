@@ -9,6 +9,7 @@
 
   "gtceu.bio_reactor": "Bio Reactor",
   "gtceu.chemical_dehydrator": "Chemical Dehydrator",
+  "gtceu.large_mixer": "Large Mixing Vessel",
 
   "block.gtceu.hv_bio_reactor": "§6Small Bio Reactor I",
   "block.gtceu.ev_bio_reactor": "§5Small Bio Reactor II",
@@ -19,7 +20,6 @@
 
   "material.gthrt.estradiol": "Estradiol",
   "material.gthrt.testosterone": "Testosterone",
-  "material.gthrt.lead_zirconate_titanate": "Lead Zirconate Titanate",
   "material.gthrt.hydrogen_peroxide": "Hydrogen Peroxide",
   "material.gthrt.ammonium_nitrate": "Ammonium Nitrate",
   "material.gthrt.turpentine": "Turpentine",
@@ -63,8 +63,14 @@
   "material.gthrt.sox_2": "SOX-2 Gene",
   "material.gthrt.kfl_4": "KFL-4 Gene",
   "material.gthrt.cas_9": "Cas-9 Gene",
+  "material.gthrt.rich_nitrogen_mix": "Rich Nitrogen Mix",
+  "material.gthrt.oxidised_nitrogen_mix": "Oxidised Nitrogen Mix",
+  "material.gthrt.purified_nitrogen_mix": "Purified Nitrogen Mix",
+  "material.gthrt.carbonated_ethanolamine": "Carbonated Ethanolamine",
+  "material.gthrt.ammonia_rich_mix": "Ammonia Rich Mix",
   "material.gthrt.acetic_anhydride": "Acetic Anhydride",
   "material.gthrt.acetylsulfanilyl_chloride": "Acetylsulfanilyl Chloride",
+  "material.gthrt.chloroauric_acid": "Chloroauric Acid",
   "material.gthrt.calcium_hydroxide": "Calcium Hydroxide",
   "material.gthrt.beta_pinene": "Beta Pinene",
   "material.gthrt.yeast": "Yeast",
@@ -78,5 +84,13 @@
   "material.gthrt.brevibacterium_flavium": "Brevibacterium Flavium",
   "material.gthrt.streptococcus_pyogenes": "Streptococcus Pyogenes",
   "material.gthrt.eschericia_coli": "Eschericia Coli",
-  "material.gthrt.bifidobacterium_breve": "Bifidobacterium Breve"
+  "material.gthrt.bifidobacterium_breve": "Bifidobacterium Breve",
+  "material.gthrt.nialo_catalyst": "NiAlO Catalyst",
+  "material.gthrt.fecro_catalyst": "FeCrO Catalyst",
+  "material.gthrt.copper_leach": "Copper Leach",
+  "material.gthrt.gold_leach": "Gold Leach",
+  "material.gthrt.potassium_metabisulfite": "Potassium MetabisulfiteBreve",
+  "material.gthrt.lead_zirconate_titanate": "Lead Zirconate Titanate",
+  "material.gthrt.gold_alloy": "Gold Alloy",
+  "material.gthrt.precious_metal": "Precious Metal"
 }

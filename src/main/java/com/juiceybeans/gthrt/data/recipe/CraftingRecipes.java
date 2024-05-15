@@ -13,7 +13,6 @@ import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.cableGtSingle;
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.plate;
 import static com.gregtechceu.gtceu.common.data.GTItems.*;
 import static com.gregtechceu.gtceu.common.data.GTMachines.HULL;
-import static com.gregtechceu.gtceu.common.data.GTMachines.PUMP;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static com.gregtechceu.gtceu.data.recipe.CraftingComponent.CIRCUIT;
 import static com.juiceybeans.gthrt.common.data.HRTMachines.BIO_REACTOR;

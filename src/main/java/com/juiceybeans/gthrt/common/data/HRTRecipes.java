@@ -11,6 +11,8 @@ public class HRTRecipes {
         TestosteroneChainRecipes.init(provider);
         PolycaprolactamChainRecipes.init(provider);
         WetwareChainRecipes.init(provider);
+        GoldChainRecipes.init(provider);
+        AmmoniaChainRecipes.init(provider);
         CraftingRecipes.init(provider);
         miscRecipes(provider);
     }

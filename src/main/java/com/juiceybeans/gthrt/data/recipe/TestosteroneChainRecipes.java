@@ -6,10 +6,10 @@ import java.util.function.Consumer;
 
 public class TestosteroneChainRecipes {
     public static void init(Consumer<FinishedRecipe> provider) {
-        testosteroneChainProcesses(provider);
+        testosteroneChainRecipes(provider);
     }
 
-    private static void testosteroneChainProcesses(Consumer<FinishedRecipe> provider) {
+    private static void testosteroneChainRecipes(Consumer<FinishedRecipe> provider) {
         /*CHEMICAL_RECIPES.recipeBuilder(HRTMain.id(("dissolve_platinum_metallic_powder")))
                 .inputItems(dust, HRTMaterials.PlatinumMetallicPowder)
                 .circuitMeta(1)
