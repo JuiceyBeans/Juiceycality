@@ -2,6 +2,7 @@ package com.juiceybeans.gthrt;
 
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+import com.juiceybeans.gthrt.common.data.HRTOres;
 import com.juiceybeans.gthrt.common.data.HRTRecipes;
 import net.minecraft.data.recipes.FinishedRecipe;
 
@@ -28,6 +29,11 @@ public class HRTAddon implements IGTAddon {
     @Override
     public void registerTagPrefixes() {
         //CustomTagPrefixes.init();
+    }
+
+    @Override
+    public void registerOreVeins() {
+        HRTOres.init();
     }
 
     @Override

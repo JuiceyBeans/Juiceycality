@@ -2,6 +2,7 @@
 - [ ] Stem cells recipe in (L)CR
 - [ ] Resin -> rubber pulp in extractor
 - [ ] Raw growth medium -> Sterilized in fluid heater
+- [ ] Gold recipes
 
 ## Machines
 - [ ] Steam Mixer
