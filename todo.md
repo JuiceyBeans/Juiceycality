@@ -8,9 +8,11 @@
 - [ ] Steam Mixer
 
 ## Multiblocks
-- [ ] Bio Reactor Multi
-- [ ] Increase number of slots of large mixing vessel
+- [x] Bio Reactor Multi
+- [x] Increase number of slots of large mixing vessel
 
 ## Misc
 - [ ] Change namespace from HRT to Juiceycality or whatever
-- [ ] Add recipe ids to all recipes in WetwareChainRecipes
+- [x] Add recipe ids for all recipes in WetwareChainRecipes
+- [ ] Fix weird CTM for bio sterile casing
+- [ ] Fix Large Mixing Vessel JEI tab icon
