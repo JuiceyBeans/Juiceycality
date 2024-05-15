@@ -7,23 +7,30 @@ import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.machine.SimpleTieredMachine;
+import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
+import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
+import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
+import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.recipe.OverclockingLogic;
 import com.gregtechceu.gtceu.api.registry.registrate.MachineBuilder;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
+import com.juiceybeans.gthrt.HRTMain;
 import it.unimi.dsi.fastutil.ints.Int2LongFunction;
+import net.minecraft.network.chat.Component;
 
 import java.util.Locale;
 import java.util.function.BiFunction;
 
 import static com.gregtechceu.gtceu.api.GTValues.*;
+import static com.gregtechceu.gtceu.api.pattern.Predicates.blocks;
 import static com.gregtechceu.gtceu.common.data.GTMachines.*;
 import static com.gregtechceu.gtceu.common.registry.GTRegistration.REGISTRATE;
 import static com.gregtechceu.gtceu.utils.FormattingUtil.toEnglishName;
 
 public class HRTMachines {
 
-    // Machine Definitions
+    // Singleblock Machines
     public static final MachineDefinition[] BIO_REACTOR = HRTMachines.registerTieredMachines("bio_reactor", (holder, tier) -> new SimpleTieredMachine(holder, tier, defaultTankSizeFunction), (tier, builder) -> builder
             .langValue("%s Small Bio Reactor %s".formatted(VLVH[tier], VLVT[tier]))
             .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(GTCEu.id("bio_reactor"), HRTRecipeTypes.BIO_REACTOR_RECIPES))
@@ -36,10 +43,40 @@ public class HRTMachines {
             .register(), GTValues.tiersBetween(HV, IV));
     public static final MachineDefinition[] CHEMICAL_DEHYDRATOR = HRTMachines.registerSimpleMachines("chemical_dehydrator", HRTRecipeTypes.CHEMICAL_DEHYDRATOR_RECIPES);
 
-    public static void init() {}
+    // Multiblock Machines
+    public static final MachineDefinition LARGE_BIO_REACTOR = REGISTRATE.multiblock("large_bio_reactor", WorkableElectricMultiblockMachine::new)
+            .langValue("Large Bio Reactor")
+            .tooltips(Component.translatable("gtceu.multiblock.parallelizable.tooltip"))
+            .tooltips(Component.translatable("gtceu.machine.available_recipe_map_1.tooltip", Component.translatable("gtceu.bio_reactor")))
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType(HRTRecipeTypes.BIO_REACTOR_RECIPES)
+            .recipeModifiers(GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.ELECTRIC_OVERCLOCK.apply(OverclockingLogic.NON_PERFECT_OVERCLOCK))
+            .appearanceBlock(HRTBlocks.BiologicallySterileCasing)
+            .pattern(definition -> FactoryBlockPattern.start()
+                    .aisle("XXXXX", "XGGGX", "XGGGX", "XGGGX", "XXXXX")
+                    .aisle("XXXXX", "G###G", "G#s#G", "G###G", "XXXXX")
+                    .aisle("XXXXX", "G#P#G", "GEFEG", "G#P#G", "XXXXX")
+                    .aisle("XXXXX", "G###G", "G#s#G", "G###G", "XXXXX")
+                    .aisle("XXSXX", "XGGGX", "XGGGX", "XGGGX", "XXXXX")
+                    .where('S', Predicates.controller(blocks(definition.getBlock())))
+                    .where('F', Predicates.blocks(HRTBlocks.FieldGeneratorCasingUV.get()))
+                    .where('E', Predicates.blocks(HRTBlocks.EmitterCasingUV.get()))
+                    .where('s', Predicates.blocks(HRTBlocks.SensorCasingUV.get()))
+                    .where('P', Predicates.blocks(HRTBlocks.PumpCasingUV.get()))
+                    .where('G', Predicates.blocks(HRTBlocks.OsmiridiumGlass.get()))
+                    .where('#', Predicates.air())
+                    .where('X', blocks(HRTBlocks.BiologicallySterileCasing.get()).setMinGlobalLimited(34)
+                            .or(Predicates.autoAbilities(definition.getRecipeTypes()))
+                            .or(Predicates.autoAbilities(true, false, true)))
+                    .build())
+            .workableCasingRenderer(HRTMain.id("block/casings/solid/biologically_sterile_machine_casing"),
+                    GTCEu.id("block/machines/large_chemical_reactor"), false)
+            .register();
 
     // Builder functions
     // Note: Machines need to be registered to your namespace instead of GTMachines
+    public static void init() {}
+
     public static MachineDefinition[] registerSimpleMachines(String name,
                                                              GTRecipeType recipeType,
                                                              Int2LongFunction tankScalingFunction,

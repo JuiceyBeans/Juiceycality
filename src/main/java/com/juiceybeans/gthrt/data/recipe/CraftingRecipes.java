@@ -3,7 +3,7 @@ package com.juiceybeans.gthrt.data.recipe;
 import com.gregtechceu.gtceu.api.data.chemical.material.stack.UnificationEntry;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
-import com.juiceybeans.gthrt.data.HRTBlocks;
+import com.juiceybeans.gthrt.common.data.HRTBlocks;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -25,7 +25,7 @@ public class CraftingRecipes {
                 'B', ELECTRIC_PUMP_HV,
                 'C', SENSOR_HV,
                 'D', HULL[HV].asStack(),
-                'E', GTBlocks.CASING_TEMPERED_GLASS,
+                'E', HRTBlocks.BorosilicateGlass,
                 'F', new UnificationEntry(cableGtSingle, Gold),
                 'G', new UnificationEntry(plate, Polytetrafluoroethylene),
                 'H', new UnificationEntry(plate, StainlessSteel)
