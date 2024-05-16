@@ -1,4 +1,4 @@
-package com.juiceybeans.juiceycality.data.recipe;
+package com.juiceybeans.juiceycality.data.recipe.chain;
 
 import net.minecraft.data.recipes.FinishedRecipe;
 

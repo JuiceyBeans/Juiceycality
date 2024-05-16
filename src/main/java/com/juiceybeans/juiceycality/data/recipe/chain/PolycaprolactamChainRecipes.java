@@ -1,4 +1,4 @@
-package com.juiceybeans.juiceycality.data.recipe;
+package com.juiceybeans.juiceycality.data.recipe.chain;
 
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.juiceybeans.juiceycality.JCMain;

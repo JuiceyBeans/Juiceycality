@@ -1,6 +1,7 @@
 package com.juiceybeans.juiceycality.common.data;
 
 import com.juiceybeans.juiceycality.data.recipe.*;
+import com.juiceybeans.juiceycality.data.recipe.chain.*;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;

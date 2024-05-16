@@ -1,4 +1,4 @@
-package com.juiceybeans.juiceycality.data.recipe;
+package com.juiceybeans.juiceycality.data.recipe.chain;
 
 import com.juiceybeans.juiceycality.JCMain;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -22,14 +22,6 @@ public class WetwareChainRecipes {
         wetwareChainRecipes(provider);
     }
     private static void wetwareChainRecipes(Consumer<FinishedRecipe> provider) {
-        ASSEMBLER_RECIPES.recipeBuilder(JCMain.id("ultrasonic_homogenizer"))
-                .inputItems(PiezoelectricCrystal.asStack())
-                .inputItems(rodLong, RhodiumPlatedPalladium)
-                .outputItems(UltrasonicHomogenizer.asStack())
-                .EUt(30720)
-                .duration(500)
-                .save(provider);
-
         ASSEMBLER_RECIPES.recipeBuilder(JCMain.id("piezoelectric_crystal"))
                 .inputItems(gemExquisite, LeadZirconateTitanate, 2)
                 .inputItems(wireFine, Gold)

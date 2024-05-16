@@ -1,4 +1,4 @@
-package com.juiceybeans.juiceycality.data.recipe;
+package com.juiceybeans.juiceycality.data.recipe.chain;
 
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
