@@ -9,6 +9,8 @@ import static com.gregtechceu.gtceu.common.data.machines.GCyMMachines.LARGE_MIXE
 
 @Mixin(GCyMMachines.class)
 public class GCyMMixin {
+
+    // Adds Large Mixer (custom) recipes to Large Mixing Vessel
     static {
         LARGE_MIXER.setRecipeTypes(new com.gregtechceu.gtceu.api.recipe.GTRecipeType[]{JCRecipeTypes.LARGE_MIXER_RECIPES, GTRecipeTypes.MIXER_RECIPES});
     }

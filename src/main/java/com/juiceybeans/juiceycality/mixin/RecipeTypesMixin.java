@@ -14,7 +14,7 @@ public class RecipeTypesMixin {
         MIXER_RECIPES.onRecipeBuild((recipeBuilder, provider) -> JCRecipeTypes.LARGE_MIXER_RECIPES.copyFrom(recipeBuilder));
     }
 
-    /* Unused, leaving this here for future reference
+    /* Unused, leaving this here for future reference (increases number of IO slots for mixer)
     @ModifyArg(
             method = "<clinit>",
             slice = @Slice(
