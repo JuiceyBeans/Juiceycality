@@ -4,9 +4,7 @@ import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.juiceybeans.juiceycality.common.data.JCOres;
 import com.juiceybeans.juiceycality.common.data.JCRecipes;
-import com.juiceybeans.juiceycality.data.recipe.RemovedRecipes;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.resources.ResourceLocation;
 
 import java.util.function.Consumer;
 
