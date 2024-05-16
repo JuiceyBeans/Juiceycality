@@ -6,6 +6,7 @@
 
 ## Machines
 - [ ] Steam Mixer
+- [ ] Plasma Arc Furnace
 
 ## Multiblocks
 - [x] Bio Reactor Multi
