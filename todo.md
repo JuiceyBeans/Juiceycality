@@ -13,7 +13,7 @@
 - [x] Increase number of slots of large mixing vessel
 
 ## Misc
-- [ ] Change namespace from HRT to Juiceycality or whatever
+- [x] Change namespace from HRT to Juiceycality or whatever
 - [x] Add recipe ids for all recipes in WetwareChainRecipes
 - [ ] Fix weird CTM for bio sterile casing
 - [ ] Fix Large Mixing Vessel JEI tab icon

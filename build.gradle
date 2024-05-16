@@ -34,7 +34,7 @@ loom {
         // specify the mixin configs used in this mod
         // this will be added to the jar manifest as well!
         mixinConfigs = [
-                "gthrt.mixins.json"
+                "juiceycality.mixins.json"
         ]
 
         // missing access transformers?
@@ -50,7 +50,7 @@ loom {
     runs {
         data {
             data()
-            programArgs "--all", "--mod", "gthrt"
+            programArgs "--all", "--mod", "juiceycality"
             programArgs "--output", generatedResources.absolutePath
         }
     }
