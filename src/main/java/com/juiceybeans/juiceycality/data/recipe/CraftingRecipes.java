@@ -52,7 +52,7 @@ public class CraftingRecipes {
                 'G', new UnificationEntry(plate, Polytetrafluoroethylene),
                 'H', new UnificationEntry(plate, TungstenSteel)
         );
-        VanillaRecipeHelper.addShapedRecipe(provider, "wrought_iron_hammering", ChemicalHelper.get(ingot, WroughtIron),
+        VanillaRecipeHelper.addShapelessRecipe(provider, "wrought_iron_hammering", ChemicalHelper.get(ingot, WroughtIron),
                 'h', JCItems.HotIronIngot
                 );
         VanillaRecipeHelper.addSmeltingRecipe(provider, "smelt_iron_to_hot", ChemicalHelper.getTag(ingot, Iron), JCItems.HotIronIngot.asStack());
