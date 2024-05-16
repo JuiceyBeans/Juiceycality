@@ -2,9 +2,6 @@ package com.juiceybeans.juiceycality.data.recipe;
 
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
 import com.gregtechceu.gtceu.api.data.chemical.material.stack.UnificationEntry;
-import com.gregtechceu.gtceu.api.item.tool.GTToolType;
-import com.gregtechceu.gtceu.api.item.tool.ToolHelper;
-import com.gregtechceu.gtceu.data.recipe.CraftingComponent;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 import com.juiceybeans.juiceycality.common.data.JCBlocks;
 import com.juiceybeans.juiceycality.common.data.JCItems;
@@ -55,8 +52,8 @@ public class CraftingRecipes {
                 'G', new UnificationEntry(plate, Polytetrafluoroethylene),
                 'H', new UnificationEntry(plate, TungstenSteel)
         );
-        VanillaRecipeHelper.addShapelessRecipe(provider, "wrought_iron_hammering", ChemicalHelper.get(ingot, Iron),
-                JCItems.HotIronIngot//, ToolHelper.get(GTToolType.HARD_HAMMER, material)
+        VanillaRecipeHelper.addShapedRecipe(provider, "wrought_iron_hammering", ChemicalHelper.get(ingot, WroughtIron),
+                'h', JCItems.HotIronIngot
                 );
         VanillaRecipeHelper.addSmeltingRecipe(provider, "smelt_iron_to_hot", ChemicalHelper.getTag(ingot, Iron), JCItems.HotIronIngot.asStack());
     }
