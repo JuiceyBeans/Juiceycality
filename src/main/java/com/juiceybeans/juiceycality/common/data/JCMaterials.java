@@ -67,11 +67,6 @@ public class JCMaterials {
             .color(0x959c60)
             .buildAndRegister()
             .setFormula("C2H2");
-    public static final Material Formaldehyde = new Material.Builder(JCMain.id("formaldehyde"))
-            .fluid()
-            .color(0x95a13a)
-            .buildAndRegister()
-            .setFormula("CH2O");
     public static final Material PropargylAlcohol = new Material.Builder(JCMain.id("propargyl_alcohol"))
             .fluid()
             .color(0xbfb32a)
@@ -282,11 +277,6 @@ public class JCMaterials {
             .color(0x2f5d99)
             .buildAndRegister()
             .setFormula("NH3((H2O)2(CH4)?");
-    public static final Material AceticAnhydride = new Material.Builder(JCMain.id("acetic_anhydride"))
-            .fluid()
-            .color(0xD5DDDF)
-            .buildAndRegister()
-            .setFormula("(CH3CO)2O");
     public static final Material AcetylsulfanilylChloride = new Material.Builder(JCMain.id("acetylsulfanilyl_chloride"))
             .fluid()
             .color((Aniline.getMaterialRGB() + AceticAnhydride.getMaterialRGB() + ChlorosulfonicAcid.getMaterialRGB())/3)
@@ -304,11 +294,6 @@ public class JCMaterials {
     //////////////////
     // Simple dusts //
     //////////////////
-    public static final Material CalciumHydroxide = new Material.Builder(JCMain.id("calcium_hydroxide"))
-            .dust()
-            .color(0x5f8764).iconSet(MaterialIconSet.DULL)
-            .buildAndRegister()
-            .setFormula("Ca(OH)2");
     public static final Material BetaPinene = new Material.Builder(JCMain.id("beta_pinene"))
             .dust()
             .color(0x61ad6b).iconSet(MaterialIconSet.DULL)
