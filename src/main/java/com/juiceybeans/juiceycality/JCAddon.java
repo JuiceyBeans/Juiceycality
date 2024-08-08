@@ -3,6 +3,7 @@ package com.juiceybeans.juiceycality;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.juiceybeans.juiceycality.common.data.JCOres;
+import com.juiceybeans.juiceycality.common.data.JCRecipeConditions;
 import com.juiceybeans.juiceycality.common.data.JCRecipes;
 import net.minecraft.data.recipes.FinishedRecipe;
 
@@ -39,6 +40,11 @@ public class JCAddon implements IGTAddon {
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
         JCRecipes.init(provider);
+    }
+
+    @Override
+    public void registerRecipeConditions() {
+        JCRecipeConditions.init();
     }
 
     // If you have custom ingredient types, uncomment this & change to match your capability.

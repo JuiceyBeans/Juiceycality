@@ -15,6 +15,7 @@ public class JCRecipes {
         GoldChainRecipes.init(provider);
         AmmoniaChainRecipes.init(provider);
         CraftingRecipes.init(provider);
+        BlockAdjacentTestRecipes.init(provider);
         miscRecipes(provider);
     }
 

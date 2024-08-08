@@ -42,6 +42,21 @@ public class JCMachines {
             .register(), GTValues.tiersBetween(HV, IV));
     public static final MachineDefinition[] CHEMICAL_DEHYDRATOR = JCMachines.registerSimpleMachines("chemical_dehydrator", JCRecipeTypes.CHEMICAL_DEHYDRATOR_RECIPES);
 
+    public static final MachineDefinition[] BLOCK_ADJACENT = JCMachines.registerTieredMachines("block_adjacent",
+            (holder, tier) -> new SimpleTieredMachine(holder, tier, defaultTankSizeFunction), (tier, builder) -> builder
+                    .langValue("%s Block Adjacent Tester %s".formatted(VLVH[tier], VLVT[tier]))
+                    .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(GTCEu.id("block_adjacent"),
+                            JCRecipeTypes.BLOCK_ADJACENT_RECIPES))
+                    .rotationState(RotationState.NON_Y_AXIS)
+                    .recipeType(JCRecipeTypes.BLOCK_ADJACENT_RECIPES)
+                    .recipeModifier(GTRecipeModifiers.ELECTRIC_OVERCLOCK.apply(OverclockingLogic.NON_PERFECT_OVERCLOCK))
+                    .workableTieredHullRenderer(GTCEu.id("block/machines/block_adjacent"))
+                    .tooltips(workableTiered(tier, GTValues.V[tier], GTValues.V[tier] * 64,
+                            JCRecipeTypes.BLOCK_ADJACENT_RECIPES, defaultTankSizeFunction.apply(tier), true))
+                    .tooltips(explosion())
+                    .register(),
+            ELECTRIC_TIERS);
+
     // Multiblock Machines
     public static final MachineDefinition LARGE_BIO_REACTOR = REGISTRATE.multiblock("large_bio_reactor", WorkableElectricMultiblockMachine::new)
             .langValue("Large Bio Reactor")
